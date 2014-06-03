@@ -1,0 +1,25 @@
+name: DataAPILogs
+id:   DataAPILogs
+applications:
+    data_api:
+        endpoints:
+              - id: data_api_get_logs
+                handler: DataAPILogs::DataAPI::_handler_data_api_get_logs
+                requires_login: 1
+                route: '/sites/:site_id/logs'
+                verb: GET
+                version: 1
+        resources:
+            log:
+                fields:
+                    - id
+                    - message
+                    - ip
+                    - blog_id
+                    - author_id
+                    - level
+                    - author_id
+                    - category
+                    - metadata
+                    - created_on
+
